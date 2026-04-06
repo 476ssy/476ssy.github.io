@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>476ssy의 블로그</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .site-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #555;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: #111;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #aac4ff;
+    }
+
+    /* Main layout */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 32px;
+    }
+
+    /* Posts */
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .post-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 28px;
+      border: 1px solid #e8e8e8;
+      transition: box-shadow 0.2s;
+    }
+
+    .post-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .post-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #4a90d9;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .post-card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .post-card h2 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .post-card h2 a:hover {
+      color: #4a90d9;
+    }
+
+    .post-excerpt {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .post-meta {
+      font-size: 0.82rem;
+      color: #999;
+      display: flex;
+      gap: 16px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #4a90d9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .widget {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid #e8e8e8;
+    }
+
+    .widget h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .widget-profile {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4a90d9, #1a1a2e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 2rem;
+    }
+
+    .widget-profile p {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #f0f4ff;
+      color: #4a90d9;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    .tag:hover {
+      background: #4a90d9;
+      color: #fff;
+    }
+
+    .recent-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .recent-list li {
+      font-size: 0.88rem;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .recent-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .recent-list a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .recent-list a:hover {
+      color: #4a90d9;
+    }
+
+    .recent-date {
+      font-size: 0.78rem;
+      color: #aaa;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a2e;
+      color: #aaa;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+      margin-top: 60px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="site-title">476ssy.log</a>
+      <nav>
+        <a href="#">홈</a>
+        <a href="#">카테고리</a>
+        <a href="#">태그</a>
+        <a href="#">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>476ssy의 블로그</h1>
+    <p>개발, 일상, 그리고 생각들을 기록합니다.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- 포스트 목록 -->
+    <main class="post-list">
+
+      <article class="post-card">
+        <div class="post-category">개발</div>
+        <h2><a href="#">GitHub Pages로 나만의 블로그 만들기</a></h2>
+        <p class="post-excerpt">
+          GitHub Pages를 이용하면 무료로 정적 웹사이트를 호스팅할 수 있습니다.
+          HTML, CSS, JavaScript만으로도 충분히 멋진 블로그를 만들 수 있어요.
+        </p>
+        <div class="post-meta">
+          <span>2026년 4월 6일</span>
+          <span>읽는 시간 3분</span>
+        </div>
+        <a class="read-more" href="#">더 읽기 →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="post-category">일상</div>
+        <h2><a href="#">블로그를 시작하며</a></h2>
+        <p class="post-excerpt">
+          오랫동안 미뤄왔던 블로그를 드디어 시작했습니다.
+          꾸준히 배운 것들을 기록하고, 생각을 정리하는 공간으로 만들어 나갈 계획입니다.
+        </p>
+        <div class="post-meta">
+          <span>2026년 4월 6일</span>
+          <span>읽는 시간 2분</span>
+        </div>
+        <a class="read-more" href="#">더 읽기 →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="post-category">개발</div>
+        <h2><a href="#">HTML과 CSS로 레이아웃 잡기</a></h2>
+        <p class="post-excerpt">
+          CSS Grid와 Flexbox를 활용하면 복잡한 레이아웃도 깔끔하게 구현할 수 있습니다.
+          이번 포스트에서는 블로그 레이아웃을 예시로 살펴봅니다.
+        </p>
+        <div class="post-meta">
+          <span>2026년 4월 5일</span>
+          <span>읽는 시간 5분</span>
+        </div>
+        <a class="read-more" href="#">더 읽기 →</a>
+      </article>
+
+    </main>
+
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+
+      <div class="widget widget-profile">
+        <h3>프로필</h3>
+        <div class="avatar">🐧</div>
+        <strong>476ssy</strong>
+        <p>코드 짜고 생각 정리하는 사람.<br>이것저것 기록합니다.</p>
+      </div>
+
+      <div class="widget">
+        <h3>태그</h3>
+        <div class="tag-list">
+          <a class="tag" href="#">HTML</a>
+          <a class="tag" href="#">CSS</a>
+          <a class="tag" href="#">JavaScript</a>
+          <a class="tag" href="#">GitHub</a>
+          <a class="tag" href="#">개발</a>
+          <a class="tag" href="#">일상</a>
+        </div>
+      </div>
+
+      <div class="widget">
+        <h3>최근 포스트</h3>
+        <ul class="recent-list">
+          <li>
+            <a href="#">GitHub Pages로 블로그 만들기</a>
+            <span class="recent-date">2026.04.06</span>
+          </li>
+          <li>
+            <a href="#">블로그를 시작하며</a>
+            <span class="recent-date">2026.04.06</span>
+          </li>
+          <li>
+            <a href="#">HTML/CSS 레이아웃 잡기</a>
+            <span class="recent-date">2026.04.05</span>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 476ssy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
