@@ -26,6 +26,12 @@ body {
   background-position: center;
 }
 
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
 
 hy-push-state {
   background-color: rgba(255, 255, 255, 0.85) !important;
