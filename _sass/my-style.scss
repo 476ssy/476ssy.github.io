@@ -27,11 +27,21 @@ body {
 }
 
 
-.dark-mode #_main {
+hy-push-state {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  hy-push-state {
+    background-color: rgba(25, 30, 40, 0.85) !important;
+  }
+}
+
+.dark-mode hy-push-state {
   background-color: rgba(25, 30, 40, 0.85) !important;
 }
 
-.light-mode #_main {
+.light-mode hy-push-state {
   background-color: rgba(255, 255, 255, 0.85) !important;
 }
 
