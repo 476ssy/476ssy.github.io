@@ -29,7 +29,7 @@ description:           >
   with a focus on personal sites that are meant to impress.
 
 # A shorter description for the sidebar.
-tagline:               476ssy
+tagline:               믹 구 조 아
 
 # A list of keywords for your blog
 keywords:              []
@@ -61,6 +61,8 @@ menu:
     url:               /research/
   - title:             공모전/자격증
     url:               /awards/
+  - title:             documantation
+    url:               /doc/
   - title:             About
     url:               /about/
 
