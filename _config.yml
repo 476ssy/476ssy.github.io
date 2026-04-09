@@ -62,7 +62,7 @@ menu:
   - title:             공모전/자격증
     url:               /awards/
   - title:             documantation
-    url:               /doc/
+    url:               /docs/
   - title:             About
     url:               /about/
 
