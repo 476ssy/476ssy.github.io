@@ -1,15 +1,15 @@
 @font-face {
-  font-family: "강원교육모두";
-  src: url("/assets/fonts/ganwon-light.ttf") format("truetype");
+  font-family: 'GangwonEducationModuche';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff') format('woff');
   font-weight: 300;
-  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "강원교육모두";
-  src: url("/assets/fonts/ganwon-bold.ttf") format("truetype");
+  font-family: 'GangwonEducationModuche';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
   font-weight: 700;
-  font-style: normal;
+  font-display: swap;
 }
 
 .dl-table {
