@@ -42,17 +42,25 @@ logo:                  /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <firstname> <lastname>
-  email:               <mail@domain.tld>
+  name:                Soyeon Shin
+  email:               476ssy@gmail.com
   # # Used by `jekyll-seo-tag`:
   # twitter:             <username>
 
 # Add links to the sidebar.
 menu:
   - title:             개발
-    url:               /example/
-  - title:             설명
-    url:               /docs/
+    url:               /dev/
+  - title:             CTF/Wargame
+    url:               /ctf/
+  - title:             BugBounty
+    url:               /bugbounty/
+  - title:             블로그/기술문서
+    url:               /blog/
+  - title:             논문/컨퍼런스
+    url:               /research/
+  - title:             공모전/자격증
+    url:               /awards/
   - title:             About
     url:               /about/
 
