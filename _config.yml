@@ -61,8 +61,6 @@ menu:
     url:               /research/
   - title:             공모전/자격증
     url:               /awards/
-  - title:             documantation
-    url:               /docs/
   - title:             About
     url:               /about/
 
